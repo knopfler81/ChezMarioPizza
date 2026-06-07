@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chez Mario Pizzeria — Saint-Marcellin-en-Forez</title>
+  <meta name="description" content="Pizzeria artisanale au cœur de Saint-Marcellin-en-Forez. Pizzas faites maison, produits frais de qualité. Sur place & à emporter." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ======== NAVIGATION ======== -->
+  <nav>
+    <div class="nav-logo">Chez <span>Mario</span></div>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="#apropos">La pizzeria</a></li>
+      <li><a href="#menu">Nos pizzas</a></li>
+      <li><a href="#contact">Horaires & Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ======== HERO ======== -->
+  <section id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-tag">🍕 Pizzas artisanales · Produits frais</span>
+      <h1>
+        <span class="hero-chez">Chez</span>
+        <span class="hero-mario">Mario</span>
+        <span class="hero-pizzeria">Pizzeria</span>
+      </h1>
+      <p class="hero-sub">Saint-Marcellin-en-Forez · Ouvert dès 18h30</p>
+      <a href="#menu" class="hero-cta">Voir nos pizzas →</a>
+    </div>
+    <div class="hero-scroll">Découvrir</div>
+  </section>
+
+  <!-- ======== À PROPOS ======== -->
+  <section id="apropos" style="background:#1a1008; color:#f0e4d0;">
+    <div class="apropos-inner">
+
+      <div class="apropos-text reveal">
+        <span class="section-label">La pizzeria</span>
+        <h2 class="section-title">Une pizza, une passion.</h2>
+        <div class="divider"></div>
+        <p>
+          Au cœur de Saint-Marcellin-en-Forez, Chez Mario c'est un lieu simple,
+          convivial et familial où chaque pizza est préparée avec amour.
+          14 pizzas artisanales, toutes faites maison, élaborées à partir
+          de produits frais et de qualité.
+        </p>
+        <p>
+          Un concept centré sur l'essentiel : de bons ingrédients, une pâte
+          soignée, et une générosité qui fait la différence. Sur place
+          ou à emporter — bienvenue chez nous.
+        </p>
+        <div class="apropos-badges">
+          <div class="badge"><span class="icon">🥗</span> Produits frais</div>
+          <div class="badge"><span class="icon">🤌</span> Fait maison</div>
+          <div class="badge"><span class="icon">🏠</span> Sur place</div>
+          <div class="badge"><span class="icon">🛍️</span> À emporter</div>
+          <div class="badge"><span class="icon">⭐</span> 4,5 / 5</div>
+        </div>
+      </div>
+
+      <div class="apropos-facade reveal">
+        <!-- Remplacer par une photo du restaurant si disponible -->
+        <img src="facade.jpg" alt="Devanture de Chez Mario Pizzeria" />
+        <div class="apropos-note">
+          <div class="note-num">4,5 ★</div>
+          <div class="note-label">37 avis Google</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======== MENU ======== -->
+  <section id="menu">
+    <div class="menu-inner">
+      <div class="menu-header reveal">
+        <span class="section-label">La carte</span>
+        <h2 class="section-title">Nos pizzas</h2>
+        <div class="divider"></div>
+      </div>
+
+      <!-- Rempli dynamiquement depuis Google Sheets -->
+      <div id="pizza-grid" class="menu-grid">
+        <p class="menu-loading">Chargement de la carte…</p>
+      </div>
+
+      <p class="menu-note reveal">
+        Carte mise à jour en temps réel · Prix en euros TTC
+      </p>
+    </div>
+  </section>
+
+  <!-- ======== HORAIRES & CONTACT ======== -->
+  <section id="contact" style="background:#1a1008; color:#f0e4d0;">
+    <div class="contact-inner">
+
+      <div class="horaires-bloc reveal">
+        <span class="section-label">Quand venir ?</span>
+        <h2 class="section-title">Horaires</h2>
+        <div class="divider"></div>
+
+        <!-- TODO : confirmer les horaires exacts avec le propriétaire -->
+        <table class="horaires-table">
+          <tbody>
+            <tr>
+              <td>Lundi</td>
+              <td class="ferme">Fermé</td>
+            </tr>
+            <tr>
+              <td>Mardi</td>
+              <td>18h30 – 21h30</td>
+            </tr>
+            <tr>
+              <td>Mercredi</td>
+              <td>18h30 – 21h30</td>
+            </tr>
+            <tr>
+              <td>Jeudi</td>
+              <td>18h30 – 21h30</td>
+            </tr>
+            <tr>
+              <td>Vendredi</td>
+              <td>18h30 – 22h00</td>
+            </tr>
+            <tr>
+              <td>Samedi</td>
+              <td>18h30 – 22h00</td>
+            </tr>
+            <tr>
+              <td>Dimanche</td>
+              <td><!-- TODO --></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="contact-bloc reveal">
+        <span class="section-label">Nous trouver</span>
+        <h2 class="section-title">Contact</h2>
+        <div class="divider"></div>
+
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div>
+            <h4>Adresse</h4>
+            <p>13 Avenue de la Libération<br>42680 Saint-Marcellin-en-Forez</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <div>
+            <h4>Téléphone</h4>
+            <a href="tel:+33622897399">06 22 89 73 99</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-icon">📱</span>
+          <div>
+            <h4>Réseaux sociaux</h4>
+            <a href="https://www.facebook.com/profile.php?id=61570741948361" target="_blank" rel="noopener">
+              Facebook — chez Mario pizzeria
+            </a>
+          </div>
+        </div>
+
+        <a href="tel:+33622897399" class="btn-appeler">📞 Appeler pour commander</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======== CARTE ======== -->
+  <div id="map-section">
+    <iframe
+      src="https://maps.google.com/maps?q=13+Avenue+de+la+Lib%C3%A9ration,+42680+Saint-Marcellin-en-Forez&output=embed"
+      loading="lazy"
+      title="Carte Chez Mario Pizzeria">
+    </iframe>
+  </div>
+
+  <!-- ======== FOOTER ======== -->
+  <footer>
+    <p>© <span id="year"></span> <span>Chez Mario Pizzeria</span> — 13 Av. de la Libération, 42680 Saint-Marcellin-en-Forez</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

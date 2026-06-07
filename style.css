@@ -1,0 +1,670 @@
+/* ============================================
+   CHEZ MARIO PIZZERIA — style.css
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Oswald:wght@400;600&family=Lato:wght@300;400;700&display=swap');
+
+/* ---- Variables ---- */
+:root {
+  --noir-bois:   #1a1008;
+  --rouge:       #c0201a;
+  --rouge-clair: #d93a34;
+  --creme:       #f5ede0;
+  --creme-fonce: #e8d8c2;
+  --vert-neon:   #39ff7a;
+  --or:          #c9a84c;
+  --texte-clair: #f0e4d0;
+}
+
+/* ---- Reset & base ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--creme);
+  color: var(--noir-bois);
+  overflow-x: hidden;
+}
+
+/* ---- NAV ---- */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(26, 16, 8, 0.96);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 64px;
+  border-bottom: 2px solid var(--rouge);
+}
+
+.nav-logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--creme);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.nav-logo span { color: var(--rouge); }
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  color: var(--texte-clair);
+  text-decoration: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+nav ul li a:hover { color: var(--rouge-clair); }
+
+/* ---- HERO ---- */
+#hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--noir-bois);
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(192,32,26,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 30%, rgba(192,32,26,0.08) 0%, transparent 50%);
+}
+
+
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26,16,8,0.2) 0%,
+    rgba(26,16,8,0.5) 60%,
+    rgba(26,16,8,0.9) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 1.5rem;
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--vert-neon);
+  border: 1px solid var(--vert-neon);
+  padding: 0.3rem 1rem;
+  border-radius: 2px;
+  margin-bottom: 1.4rem;
+  text-shadow: 0 0 8px var(--vert-neon);
+  box-shadow: 0 0 10px rgba(57,255,122,0.25);
+}
+
+.hero-chez {
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 400;
+  color: var(--creme);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.hero-mario {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(5rem, 14vw, 10rem);
+  font-weight: 900;
+  color: var(--rouge);
+  line-height: 0.9;
+  text-shadow: 4px 4px 0px rgba(0,0,0,0.4), 0 0 40px rgba(192,32,26,0.3);
+  letter-spacing: -0.02em;
+}
+
+.hero-pizzeria {
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  font-weight: 600;
+  color: var(--creme);
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  margin-top: 0.4rem;
+  margin-bottom: 2rem;
+}
+
+.hero-sub {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--creme-fonce);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.05em;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--rouge);
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.85rem 2.2rem;
+  border: 2px solid var(--rouge);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.hero-cta:hover {
+  background: transparent;
+  color: var(--rouge-clair);
+  border-color: var(--rouge-clair);
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--creme-fonce);
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  animation: bounce 2s infinite;
+}
+
+.hero-scroll::after {
+  content: '';
+  width: 1px;
+  height: 40px;
+  background: var(--creme-fonce);
+}
+
+/* ---- SECTIONS COMMUNES ---- */
+section { padding: 6rem 2rem; }
+
+.section-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--rouge);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+
+.divider {
+  width: 50px;
+  height: 3px;
+  background: var(--rouge);
+  margin-bottom: 2rem;
+}
+
+/* ---- SECTION À PROPOS ---- */
+#apropos {
+  background: var(--noir-bois);
+  color: var(--texte-clair);
+}
+
+.apropos-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+#apropos .section-title { color: var(--creme); }
+
+#apropos .divider { background: var(--rouge); }
+
+.apropos-text p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--creme-fonce);
+  margin-bottom: 1.2rem;
+  font-weight: 300;
+}
+
+.apropos-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--creme);
+}
+
+.badge .icon { font-size: 1rem; }
+
+.apropos-facade {
+  position: relative;
+}
+
+.apropos-facade img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+  box-shadow: 12px 12px 0 var(--rouge);
+}
+
+.apropos-note {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  background: var(--rouge);
+  color: #fff;
+  padding: 1rem 1.4rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.4);
+}
+
+.apropos-note .note-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.apropos-note .note-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/* ---- SECTION MENU ---- */
+#menu {
+  background: var(--creme);
+  max-width: 100%;
+}
+
+.menu-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.menu-header { margin-bottom: 3rem; }
+
+.menu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pizza-card {
+  background: #fff;
+  border: 1px solid var(--creme-fonce);
+  border-radius: 4px;
+  padding: 1.1rem 1.4rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.pizza-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--rouge);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.25s ease;
+}
+
+.pizza-card:hover::before { transform: scaleY(1); }
+.pizza-card:hover {
+  box-shadow: 4px 4px 16px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.pizza-info { flex: 1; }
+
+.pizza-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--noir-bois);
+  margin-bottom: 0.3rem;
+}
+
+.pizza-ingredients {
+  font-size: 0.85rem;
+  color: #777;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+
+.menu-loading, .menu-error {
+  text-align: center;
+  padding: 3rem;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.menu-error { color: var(--rouge); }
+
+/* ---- Catégories ---- */
+.menu-categorie {
+  margin: 3rem 0 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.menu-categorie:first-child { margin-top: 0; }
+
+.categorie-titre {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--rouge);
+  white-space: nowrap;
+}
+
+.categorie-prix {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--noir-bois);
+  background: var(--creme-fonce);
+  border: 2px solid var(--rouge);
+  padding: 0.3rem 0.9rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* Ligne décorative qui prend tout l'espace restant */
+.menu-categorie::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--creme-fonce), transparent);
+}
+
+/* Grille pizzas par catégorie */
+.sous-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
+  text-align: center;
+}
+
+/* ---- SECTION HORAIRES / CONTACT ---- */
+#contact {
+  background: var(--noir-bois) !important;
+  color: var(--texte-clair);
+}
+
+/* Textes visibles sur fond sombre même sans animation reveal */
+#contact .section-title,
+#contact .horaires-table td,
+#contact .contact-item p,
+#contact .contact-item a,
+#contact .section-label,
+#apropos .section-title,
+#apropos .section-label,
+#apropos .apropos-text p,
+#apropos .badge {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+#contact .reveal,
+#apropos .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.contact-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+#contact .section-title { color: var(--creme); }
+#contact .divider { background: var(--rouge); }
+
+.horaires-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+
+.horaires-table tr { border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+.horaires-table td {
+  padding: 0.75rem 0;
+  font-size: 0.95rem;
+  color: var(--creme-fonce);
+}
+
+.horaires-table td:first-child {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--creme);
+}
+
+.horaires-table .ferme { color: #888; font-style: italic; }
+
+.contact-bloc { display: flex; flex-direction: column; gap: 1.8rem; }
+
+.contact-item {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  font-size: 1.4rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.contact-item h4 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rouge-clair);
+  margin-bottom: 0.3rem;
+}
+
+.contact-item p, .contact-item a {
+  font-size: 1rem;
+  color: var(--creme-fonce);
+  text-decoration: none;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.contact-item a:hover { color: var(--rouge-clair); }
+
+.btn-appeler {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+  background: var(--rouge);
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.8rem;
+  border: 2px solid var(--rouge);
+  transition: background 0.2s, color 0.2s;
+  align-self: flex-start;
+}
+
+.btn-appeler:hover {
+  background: transparent;
+  color: var(--rouge-clair);
+  border-color: var(--rouge-clair);
+}
+
+/* ---- MAP ---- */
+#map-section {
+  height: 360px;
+  position: relative;
+  background: var(--creme-fonce);
+}
+
+#map-section iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(30%) contrast(1.05);
+}
+
+/* ---- FOOTER ---- */
+footer {
+  background: #0e0804;
+  color: var(--creme-fonce);
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  border-top: 2px solid var(--rouge);
+}
+
+footer span { color: var(--rouge); }
+
+/* ---- ANIMATIONS ---- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- HAMBURGER MOBILE ---- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.4rem;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--creme);
+  transition: all 0.3s;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  nav ul { display: none; }
+  nav ul.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px; left: 0; right: 0;
+    background: var(--noir-bois);
+    padding: 1.5rem 2rem;
+    gap: 1.2rem;
+    border-bottom: 2px solid var(--rouge);
+  }
+  .hamburger { display: flex; }
+
+  .apropos-inner,
+  .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+
+  .apropos-note { bottom: -1rem; right: -0.5rem; }
+
+  .menu-grid { grid-template-columns: 1fr; }
+
+  section { padding: 4rem 1.2rem; }
+}
